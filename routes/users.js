@@ -77,7 +77,7 @@ router.get('/:id/verify/:token/', async (req, res) => {
 router.get('/getallusers', async (req, res) => {
 	try {
 		const users = await User.find({});
-		res.send(users);
+		res.json(users);
 	} catch (error) {
 		return res.status(404).json({ message: error });
 	}
