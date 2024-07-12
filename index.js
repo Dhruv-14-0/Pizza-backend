@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+const inject = require("@vercel/analytics/react");
 const cors = require('cors');
 const connection = require('./db');
 const userRoutes = require('./routes/users');
@@ -10,6 +11,7 @@ const pizzasRoute = require('./routes/pizzasRoute');
 const myoPizzaRoute = require('./routes/myopizza');
 const paymentRoute = require('./routes/payment');
 //connect database
+inject.inject();
 connection();
 
 //middleware
