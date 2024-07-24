@@ -11,12 +11,12 @@ const pizzasRoute = require('./routes/pizzasRoute');
 const myoPizzaRoute = require('./routes/myopizza');
 const paymentRoute = require('./routes/payment');
 //connect database
+app.use(cors());
 inject.inject();
 connection();
 
 //middleware
 app.use(express.json());
-app.use(cors());
 
 // routes
 app.use('/api/users', userRoutes);
