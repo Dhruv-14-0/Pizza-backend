@@ -12,6 +12,13 @@ const myoPizzaRoute = require('./routes/myopizza');
 const paymentRoute = require('./routes/payment');
 //connect database
 app.use(cors());
+app.use(function(req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    res.setHeader('Access-Control-Allow-Credentials', true);
+    next();
+});
 inject.inject();
 connection();
 
