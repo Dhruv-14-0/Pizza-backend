@@ -1,7 +1,6 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
-const inject = require("@vercel/analytics/react");
 const cors = require('cors');
 const connection = require('./db');
 const userRoutes = require('./routes/users');
@@ -21,7 +20,6 @@ app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Credentials', true);
     next();
 });
-inject.inject();
 connection();
 
 //middleware
