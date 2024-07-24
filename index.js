@@ -11,7 +11,9 @@ const pizzasRoute = require('./routes/pizzasRoute');
 const myoPizzaRoute = require('./routes/myopizza');
 const paymentRoute = require('./routes/payment');
 //connect database
-app.use(cors());
+app.use(cors({
+    origin: 'https://pizza-paradise-sigma.vercel.app'
+  }));
 app.use(function(req, res, next) {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
